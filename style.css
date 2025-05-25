@@ -1,236 +1,347 @@
-
+/* General reset & base */
 body {
-    background-color: rgb(239, 241, 243);
-    font-family: Arial, sans-serif;
+  background-color: rgb(239, 241, 243);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 header {
-    margin: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 header ul {
-   list-style: none;
+ list-style: none;
+ padding-left: 0;
+ margin: 0;
+ display: flex;
+ flex-wrap: wrap;
 }
+
 header li a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-    background-color: rgba(43, 165, 128, 0.664);
-    padding: 10px;
-    margin: 0px 7px 0px 7px;
-    border-radius: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  background-color: rgba(43, 165, 128, 0.664);
+  padding: 10px;
+  margin: 0 7px;
+  border-radius: 10px;
+  white-space: nowrap;
 }
+
+header button {
+  margin-top: 10px;
+}
+
+/* Profile Section */
 #Profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    padding: 30px;
-    text-align: left; /* teks rata kiri dalam kolom */
-    margin: 0px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 15px;
+  margin: 0 100px;
+  text-align: left;
+}
+
+#Profile img {
+  width: 300px;
+  height: 260px;
+  border-radius: 35%;
+  display: block;
+  padding: 10px;
+  background-color: rgb(116, 102, 102);
+  animation: awanBerubah 6s infinite alternate ease-in-out;
+}
+
+@keyframes awanBerubah {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
-  
+  50% {
+    border-radius: 30% 60% 50% 50% / 50% 60% 30% 70%;
+  }
+  100% {
+    border-radius: 70% 30% 60% 40% / 40% 60% 30% 60%;
+  }
+}
+
+.profile-text h2, 
+.profile-text h4 {
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(3, 0, 185, 0.329);
+  background-color: rgba(169, 169, 169, 0);
+  padding: 5px;
+}
+
+.sosmed {
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.sosmed a {
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sosmed a:hover {
+  transform: scale(1.2);
+}
+
+/* Pendidikan */
+#Pendidikan {
+  margin: 80px 15px;
+}
+
+#Pendidikan h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.Pendidikan {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.Pendidikan .card {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+/* Pagination */
+.geser {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.geser .pagination {
+  display: flex;
+  gap: 5px;
+}
+
+/* Skill */
+#Skill {
+  margin: 80px 15px 80px 15px;
+}
+
+#Skill h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill-container {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  background: #eee;
+  height: 25px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  line-height: 25px;
+  color: white;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Skill warna dan lebar */
+.skill-fill.html {
+  width: 10%;
+  background: #f16529;
+}
+
+.skill-fill.css {
+  width: 10%;
+  background: #2965f1;
+}
+
+.skill-fill.js {
+  width: 2%;
+  background: #f0db4f;
+  color: black;
+}
+
+.skill-fill.vbnet {
+  width: 5%;
+  background: #5c2d91;
+}
+
+.skill-fill.mysql {
+  width: 5%;
+  background: #00758f;
+}
+
+.skill-fill.office {
+  width: 10%;
+  background: #ea3e23;
+}
+
+/* Kontak */
+.form-container {
+  background-color: white;
+  padding: 40px 20px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-container input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form-container input:focus, textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-container button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Media Queries */
+
+/* Tablet dan di bawahnya */
+@media (max-width: 992px) {
+  #Profile {
+      margin: 0 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+  }
+
+  header ul {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+  }
+
+  header button {
+      align-self: stretch;
+      margin-top: 10px;
+  }
+
+  #Profile {
+      flex-direction: column;
+      margin: 0 20px;
+      text-align: center;
+  }
+
   #Profile img {
-    width: 300px;
-    height: 260px;
-    border-radius: 35%;
-    display: block;
-    padding: 10px;
-    background-color: rgb(116, 102, 102);
-    animation: awanBerubah 6s infinite alternate ease-in-out;
+      width: 80%;
+      height: auto;
+      margin: 0 auto;
   }
-  
-  /* ANIMASI bentuk awan */
-  @keyframes awanBerubah {
-    0% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    }
-    50% {
-      border-radius: 30% 60% 50% 50% / 50% 60% 30% 70%;
-    }
-    100% {
-      border-radius: 70% 30% 60% 40% / 40% 60% 30% 60%;
-    }
+
+  .profile-text h2, .profile-text h4 {
+      margin: 10px 0;
   }
-  
-  .profile-text h2, 
-  .profile-text h4 {
-    margin: 0px 100px;
-    text-shadow: 2px 2px 5px rgba(3, 0, 185, 0.329);
-    background-color: darkgray;
-    padding: 5px;
-  }
-  
-  /* Sosmed Flex */
+
   .sosmed {
-    display: flex;
-    gap: 10px;
-    padding: 15px 0px;
-    margin-top: 15px ;
+      justify-content: center;
   }
-  
-  .sosmed a {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;
-    transition: transform 0.3s;
-  }
-  
-  .sosmed a:hover {
-    transform: scale(1.2);
-  }
-  /* PENDIDIKAN */
-  #Pendidikan {
-    height: 300px;
-    margin: 80px;
-    justify-content: center;
-  }
-  #Pendidikan h1 {
-    text-align: center;
-  }
+
   .Pendidikan {
-    display: flex;
-    justify-content: space-between;
-    margin: 80px 0px 0px 0px;
+      flex-direction: column;
+      align-items: center;
   }
-  .geser .pagination {
-    align-items: center;
+
+  .Pendidikan .card {
+      max-width: 90%;
+      margin-bottom: 20px;
   }
-  /* skill  */
-  #Skill {
-    margin: 400px 0px 80px 0px;
+
+  .geser {
+      margin: 20px 0;
   }
-  
-  #Skill h1 {
-    text-align: center;
-  }
+
   .skill-container {
-    width: 90%;
-    max-width: 700px;
-    margin: auto;
-    background: #fff;
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 95%;
+      padding: 15px 20px;
   }
-  
-  .skill-container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .skill {
-    margin-bottom: 20px;
-  }
-  
-  .skill label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .skill-bar {
-    background: #eee;
-    height: 25px;
-    border-radius: 6px;
-    overflow: hidden;
-  }
-  
-  .skill-fill {
-    height: 100px;
-    line-height: 25px;
-    color: white;
-    padding-left: 10px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  /* Skill warna dan lebar */
-  .skill-fill.html {
-    width: 10%;
-    background: #f16529;
-  }
-  
-  .skill-fill.css {
-    width: 10%;
-    background: #2965f1;
-  }
-  
-  .skill-fill.js {
-    width: 2%;
-    background: #f0db4f;
-    color: black;
-  }
-  
-  .skill-fill.vbnet {
-    width: 5%;
-    background: #5c2d91;
-  }
-  
-  .skill-fill.mysql {
-    width: 5%;
-    background: #00758f;
-  }
-  
-  .skill-fill.office {
-    width: 10%;
-    background: #ea3e23;
-  }
-  /* kontak */
+
   .form-container {
-    background-color: white;
-    padding: 80px 10px;
-    margin: 40px auto; /* ganti margin agar form berada di tengah dan jaraknya wajar */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 400px;
+      width: 95%;
+      padding: 20px;
   }
-  
-  
-  .form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .form-container label {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .form-container input, textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
-  
-  .form-container input:focus, textarea:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .form-container button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-container button:hover {
-    background-color: #0056b3;
-  }
-  /*  */
+}
